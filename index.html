@@ -87,12 +87,9 @@
 
 <h2 id="布局中的尺寸与位置"><a href="#布局中的尺寸与位置" class="headerlink" title="布局中的尺寸与位置"></a>布局中的尺寸与位置</h2><p>一. CSS盒模型组成</p>
 <ol>
-<li><p>组成：content，padding，border，margin。把盒模型堪称一个包裹，content是物品，padding是填充物，border是盒子边，margin是盒子外面环境。</p>
-</li>
-<li><p>注意点：padding不能负值，margin可以</p>
-</li>
-<li><p>背景色可以平铺到margin区域，margin-top有传递问题。</p>
-</li>
+<li>组成：content，padding，border，margin。把盒模型堪称一个包裹，content是物品，padding是填充物，border是盒子边，margin是盒子外面环境。</li>
+<li>注意点：padding不能负值，margin可以</li>
+<li>背景色可以平铺到margin区域，margin-top有传递问题。</li>
 </ol>
 <p>二. 块级盒子和内联盒子</p>
 <ol>
@@ -138,26 +135,59 @@
 <p>八. 溢出项布局</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.<span class="property">box1</span>&#123;</span><br><span class="line">      <span class="attr">height</span>: 100px;</span><br><span class="line">      <span class="attr">width</span>: 200px;</span><br><span class="line">      <span class="attr">background</span>: green;</span><br><span class="line">      <span class="attr">display</span>: flex;</span><br><span class="line">      align-<span class="attr">items</span>: center;</span><br><span class="line">  &#125;</span><br><span class="line">  .<span class="property">box1</span> div&#123;</span><br><span class="line">      <span class="attr">width</span>: 50px;</span><br><span class="line">      <span class="attr">height</span>: 80px;</span><br><span class="line">      margin-<span class="attr">right</span>: 10px;</span><br><span class="line">      <span class="attr">background</span>: pink;</span><br><span class="line">      flex-<span class="attr">shrink</span>: <span class="number">0</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="grid网格布局"><a href="#grid网格布局" class="headerlink" title="grid网格布局"></a>grid网格布局</h2><p>一. 定义网格及fr单位，二维布局</p>
+<h2 id="grid网格布局"><a href="#grid网格布局" class="headerlink" title="grid网格布局"></a>grid网格布局</h2><p>一. 定义网格及fr单位，二维布局，gird容器属性：</p>
 <ol>
-<li>gird容器属性：</li>
 <li>基于网格的行和列，定义网格线的名称和网格轨道的尺寸大小</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grid-template-columns: 1fr 1fr 1fr;</span><br><span class="line">grid-template-rows: 2fr 1fr 1fr;</span><br></pre></td></tr></table></figure>
 
-<ol>
+<ol start="2">
 <li>使用命名方式定义网格区域，子项需配合grid- area使用</li>
 </ol>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grid-template-<span class="attr">areas</span>: </span><br><span class="line">            <span class="string">&quot;a1 a1 a2&quot;</span></span><br><span class="line">            <span class="string">&quot;a1 a1 a2&quot;</span> </span><br><span class="line">            <span class="string">&quot;a3 a3 a3&quot;</span>;</span><br></pre></td></tr></table></figure>
 
-<ol>
-<li>用于设置元素行列之间的间隙大小，<code>gap: 20px 30px;</code></li>
-<li>指定子项在网格中的对齐方式，默认值：stretch</li>
+<ol start="3">
+<li><p>用于设置元素行列之间的间隙大小，<code>gap: 20px 30px;</code></p>
+</li>
+<li><p>指定子项在网格中的对齐方式，默认值：stretch</p>
+</li>
 </ol>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 行 垂直对齐 水平对齐 */</span></span><br><span class="line">            place-<span class="attr">items</span>: end start;</span><br><span class="line"><span class="comment">/* 整体 垂直对齐 水平对齐 */</span></span><br><span class="line">            place-<span class="attr">content</span>: end start;</span><br></pre></td></tr></table></figure>
 
-<ol>
+<ol start="5">
 <li>隐式网格：指定在现实网格之外的隐式网格，如何排列及尺寸大小</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 可以调节产生隐式网格的高度 */</span></span><br><span class="line">grid-auto-<span class="attr">rows</span>: 100px;</span><br><span class="line"><span class="comment">/* 列方向上产生隐式网格 */</span></span><br><span class="line">grid-auto-<span class="attr">columns</span>: 100px; </span><br></pre></td></tr></table></figure>
+
+<p>二. grid子项属性：</p>
+<ol>
+<li>基于线的元素放置，表示grid子项所占据的区域的起始和终止位置，包括水平和垂直。</li>
+</ol>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 列 第二列开始，第四列结束 */</span></span><br><span class="line">            grid-column-<span class="attr">end</span>: <span class="number">2</span>;</span><br><span class="line">            grid-column-<span class="attr">start</span>: <span class="number">4</span>;</span><br><span class="line"><span class="comment">/* 占两列 span是表示数字 */</span></span><br><span class="line">            grid-column-<span class="attr">start</span>: <span class="number">2</span>;</span><br><span class="line">            grid-column-<span class="attr">end</span>: span <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<p>缩写方式，通过 &#x2F; 作为分割</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">grid-<span class="attr">row</span>: <span class="number">2</span> / <span class="number">3</span>;</span><br><span class="line"><span class="comment">/* 行列起始的集合 */</span></span><br><span class="line">grid-<span class="attr">area</span>: ;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>repeat()，指定课选重复值</li>
+</ol>
+<p>三. 多个方块组合排列</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">.<span class="property">box</span>&#123;</span><br><span class="line">     <span class="attr">display</span>: grid;</span><br><span class="line">     grid-template-<span class="attr">columns</span>: <span class="title function_">repeat</span>(<span class="number">3</span>,1fr);</span><br><span class="line">     grid-template-<span class="attr">rows</span>: <span class="title function_">repeat</span>(<span class="number">3</span>,1fr);</span><br><span class="line">     <span class="attr">gap</span>: 5px;</span><br><span class="line"> &#125;</span><br><span class="line"> .<span class="property">box</span> div&#123;</span><br><span class="line">     <span class="attr">background</span>: green; </span><br><span class="line"> &#125;</span><br><span class="line"> .<span class="property">box</span> <span class="attr">div</span>:nth-<span class="keyword">of</span>-<span class="title function_">type</span>(<span class="params"><span class="number">1</span></span>)&#123;</span><br><span class="line">     <span class="comment">/* span 占几个格 */</span></span><br><span class="line">     grid-<span class="attr">area</span>: <span class="number">1</span>/<span class="number">1</span>/span <span class="number">2</span>/span <span class="number">2</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>四. 栅格布局：一个网页会分成12个栅格</p>
+<h2 id="移动端适配布局"><a href="#移动端适配布局" class="headerlink" title="移动端适配布局"></a>移动端适配布局</h2><p>一.</p>
+<ol>
+<li>px to rem的插件。ps中量取的是物理像素，css中设置的是逻辑像素，所以对量取的值除以2</li>
+</ol>
+<h2 id="响应式布局"><a href="#响应式布局" class="headerlink" title="响应式布局"></a>响应式布局</h2><p>一. 媒体查询</p>
+<ol>
+<li>添加到样式表的底部</li>
+<li>min-width方式：移动优先原则，先编写移动端设备，然后响应式过度到PC端。</li>
+</ol>
+<p>二.   响应式交互实现</p>
+<ol>
+<li>利用 :checked 伪类</li>
+<li>利用JS脚本。</li>
 </ol>
 </div><hr></div><div class="recent-post-item article-container"><a class="article-title" href="/2022/03/02/%E5%89%8D%E7%AB%AF/">前端</a><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2022-03-02</time><span class="article-meta tags"><span class="article-meta__separator">|</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/%E5%8D%9A%E5%AE%A2/">博客</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/HTML5/">HTML5</a><span class="article-meta__link">-</span><i class="fa fa-tag article-meta__icon" aria-hidden="true"></i><a class="article-meta__tags" href="/tags/CSS3/">CSS3</a></span><div class="content"><span id="more"></span>
 
