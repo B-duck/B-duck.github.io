@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkjingdong"]=self["webpackChunkjingdong"]||[]).push([[177],{5809:function(n,r,e){e.r(r),e.d(r,{default:function(){return o}});var t=e(6252);const u={class:"wrapper"};function c(n,r,e,c,s,a){return(0,t.wg)(),(0,t.iD)("div",u)}var s={},a=e(3744);const i=(0,a.Z)(s,[["render",c]]);var o=i}}]);
+//# sourceMappingURL=home.f36f3e5e.js.map
