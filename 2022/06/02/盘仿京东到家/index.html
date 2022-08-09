@@ -17,6 +17,7 @@
 <ol start="2">
 <li><strong>解决图片防抖</strong>：因为图片加载的太慢，所以会产生抖动，通过css的方法去解决它：我们先计算一下图片的高宽比，得出是0.254，那这里给个底部内边距百分之25.4指的就是屏幕宽度的百分之25.4，又因为图片的宽度和屏幕宽度一样，所以这就相当于图片的高度。所以我们这么想，就在图片没加载出来之前就会把位置占住。这样就实现了防抖效果。</li>
 </ol>
+<p>test</p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.<span class="property">banner</span> &#123;</span><br><span class="line">  <span class="attr">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attr">overflow</span>: hidden;</span><br><span class="line">  padding-<span class="attr">bottom</span>: <span class="number">25.4</span>%;</span><br><span class="line">  &amp;__img &#123;</span><br><span class="line">    <span class="attr">width</span>: <span class="number">100</span>%;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
